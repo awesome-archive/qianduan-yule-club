@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>前端娱乐圈大事记</title>
-  <link rel="stylesheet" href="./fontend.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="./frontend.css">
 </head>
 
 <body>
@@ -38,7 +39,7 @@
           </div>
           <div class="timeline-content" v-bind:class="[ (index+1)%2 === 0 ? 'right': '' ]">
             <h2>{{item.title}}</h2>
-            <p v-html="item.content"></p>
+            <p class="item-content" v-html="item.content"></p>
             <a :href="item.link" class="btn" target="_blank" rel="noopener noreferrer">{{item.link_title}}</a>
             <i class="date">{{item.date}}</i>
           </div>
@@ -55,13 +56,20 @@
         return {
           data: [
             {
+              title: 'koa重要中间件koa-router作者公开宣称出售npm包',
+              content: '原作者alexmingoia在Github/koa-router的1月29日commit message中表示自己想要赚回一些自己为该库付出的心血。目前已转让给ZijianHe',
+              date: '2019-1-29',
+              link_title: '如何看待 koa-router 作者公开售卖 npm 包？',
+              link: 'https://www.zhihu.com/question/310604967',
+            },
+            {
               title: '阿里开源框架ant-design强制添加圣诞彩蛋并无法关闭',
               content: '添加此代码的作者afc163在同年9月10日中表示, changelog 里无须体现, 有几位发现的用户在其下也只是评论 nice, 无敌.. 在圣诞节凌晨有人表达不满, 发出 issue , 作者 duplicate 了 issue , 还评论说 早就做好了被骂的准备. 随后几十分钟, revert 了此彩蛋修改并提交主干',
               date: '2018-12-25',
               link_title: 'Ant Design 圣诞地雷',
               link: 'https://www.v2ex.com/t/520690',
             },
-	    {
+            {
               title: '方应杭在掘金发表了一篇关于《停止学习框架》文章后引起多人反驳',
               content: '方应杭在发表了《停止学习框架》文章后，引发了多人反驳并发文回应，有 "驳《停止学习框架》","驳《驳 《停止学习框架》》","驳 《驳《驳《停止学习框架》》》","对于你们驳来驳去的《停止学习框架》，我有话说！"等文章相继发布，袁隆平看到了会有何感想？',
               date: '2018-12-20',
@@ -111,6 +119,13 @@
               link: 'https://www.v2ex.com/t/460883?p=1',
             },
             {
+              title: '前端娱乐圈正式上线!',
+              content: '一对小情侣一下午合作而上线的吃瓜网站',
+              date: '2018-06-01',
+              link_title: '作者公众号: YongHaoHu 写东西的 cache',
+              link: 'https://yonghaowu.github.io/',
+            },
+            {
               title: 'deno issue 事件',
               content: '<p>Node 作者 ry 开发了新项目 deno, 但一些中国开发者到此项目的issue下 留下无意义的 issue, 如: 请不要再更新了,老子学不动了; code six six; 随后ry 保护了此项目,禁止发言.<p> 此后相关 issue 被删除, 参与者陆续被封号. 最后有一位中国开发者到issue 里用英文指责 ry 对 node 不负责任, 请求关闭项目.<p/>',
               date: '2018-05-30',
@@ -158,7 +173,7 @@
               date: '2015-12-18',
               link_title: '如何评价 minggeJS ？',
               link: 'https://www.zhihu.com/question/38537088',
-            },
+            }
           ]
         }
       }
